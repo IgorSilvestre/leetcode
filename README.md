@@ -14,3 +14,9 @@ Example:
     };
   
   the awnser's file name will be: findMaxConsecutiveOnes
+
+  P.S: my commit messages from now on will be in this syntax: "problem name | difficulty | language"
+    if updated for any reason: "problem name | difficulty | language | version : reason of change", for example:
+    - (minor) I made small changes: v1.0.1;
+    - (patch) I changed a block of code: v1.1.0;
+    - (major) I changed the way I solved: v2.0.0

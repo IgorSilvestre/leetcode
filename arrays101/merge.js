@@ -13,5 +13,5 @@ var merge = function(nums1, m, nums2, n) {
         nums1[j] = nums2[j - m]
     }
     nums1.sort(sort)
-    console.log(nums1)
+    return nums1
 };

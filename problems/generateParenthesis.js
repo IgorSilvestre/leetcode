@@ -2,25 +2,21 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function (n) {
-    const result = []
+var generateParenthesis = function(n) {
+    let combinations = []
 
-    function backtrack(currentString, openCount, closeCount) {
-        if (currentString.length === 2 * n) {
-            result.push(currentString)
+    function gen (s, openCount, closeCount) {
+        if (openCount === n && n === closeCount) {
+            combinations.push(s)
             return
         }
+        
+        if (openCount < n) gen(s + '(', openCount + 1, closeCount, n)
+        if (closeCount < openCount) gen(s + ')', openCount, closeCount + 1, n)
 
-        if (openCount < n) {
-            backtrack(currentString + '(', openCount + 1, closeCount)
-        }
-
-        if (closeCount < openCount) {
-            backtrack(currentString + ')', openCount, closeCount + 1)
-        }
     }
 
-    backtrack('', 0, 0)
+    gen('', 0, 0)
 
-    return result
+    return combinations   
 }
